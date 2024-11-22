@@ -18,5 +18,15 @@ class Button:
     @staticmethod
     def pay_now_button():
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("Pay Now", url="upi://pay?pa=uk977061@axl&pn=YourName&am=Amount"))
+        markup.add(
+            types.InlineKeyboardButton(
+                "Pay Now",
+                url="https://www.phonepe.com/"  # Redirect to generic payment guidance
+            )
+        )
+        markup.add(
+            types.InlineKeyboardButton(
+                "मैंने भुगतान किया", callback_data="payment_done"
+            )
+        )
         return markup
