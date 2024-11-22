@@ -2,13 +2,19 @@ from button import Button
 
 def handle_callback(bot, call, user_data):
     if call.data.startswith("price_"):
-        if call.data == "price_10":
+        if call.data == "1":
             price = "₹50"
             members = "10 Members"
-        elif call.data == "price_50":
+        elif call.data == "2":
             price = "₹200"
             members = "50 Members"
-        elif call.data == "price_100":
+        elif call.data == "3":
+            price = "₹200"
+            members = "50 Members"
+        elif call.data == "4":
+            price = "₹200"
+            members = "50 Members"
+        elif call.data == "5":
             price = "₹400"
             members = "100 Members"
         else:
