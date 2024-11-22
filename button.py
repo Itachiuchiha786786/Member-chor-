@@ -1,9 +1,4 @@
 from telebot import types
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaVideo
-
-# Assuming you're using Pyrogram for callback handling
-app = Client("my_bot")
 
 class Button:
     @staticmethod
@@ -15,6 +10,7 @@ class Button:
 
     @staticmethod
     def price_list_buttons():
+        # Creating inline keyboard
         markup = types.InlineKeyboardMarkup()
 
         # First row: Price buttons
@@ -44,8 +40,7 @@ class Button:
         markup = types.InlineKeyboardMarkup()
         markup.add(
             types.InlineKeyboardButton(
-                "Pᴀʏ ɴᴏᴡ", 
-                callback_data="payment"  # Redirect to a general payment link
+                "Pᴀʏ ɴᴏᴡ", callback_data="pay_now_image"  # Callback to trigger image display
             )
         )
         markup.add(
@@ -55,12 +50,18 @@ class Button:
         )
         return markup
 
-# Corrected callback handler with filters
-@app.on_callback_query(filters.regex("payment"))
-async def gib_repo(client, callback_query):
-    await callback_query.edit_message_media(
-        InputMediaVideo("https://files.catbox.moe/vfn74b.jpg"),
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="settingsback_helper")]]
-        ),
-    )
+# Handler to edit the message and show the image when the button is clicked
+def handle_callback(call):
+    if call.data == "pay_now_image":
+        # Edit the message text and show the image as a preview
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="Here's the payment image preview:"
+        )
+        # Optionally, add the image URL as a caption
+        bot.edit_message_media(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            media=types.InputMediaPhoto("https://files.catbox.moe/vfn74b.jpg")
+        )
