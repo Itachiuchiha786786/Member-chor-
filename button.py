@@ -1,4 +1,9 @@
 from telebot import types
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaVideo
+
+# Assuming you're using Pyrogram for callback handling
+app = Client("my_bot")
 
 class Button:
     @staticmethod
@@ -10,7 +15,6 @@ class Button:
 
     @staticmethod
     def price_list_buttons():
-        # Creating inline keyboard
         markup = types.InlineKeyboardMarkup()
 
         # First row: Price buttons
@@ -41,7 +45,7 @@ class Button:
         markup.add(
             types.InlineKeyboardButton(
                 "Pᴀʏ ɴᴏᴡ", 
-                url="https://files.catbox.moe/vfn74b.jpg"  # Redirect to a general payment link
+                callback_data="payment"  # Redirect to a general payment link
             )
         )
         markup.add(
@@ -50,3 +54,13 @@ class Button:
             )
         )
         return markup
+
+# Corrected callback handler with filters
+@app.on_callback_query(filters.regex("payment"))
+async def gib_repo(client, callback_query):
+    await callback_query.edit_message_media(
+        InputMediaVideo("https://files.catbox.moe/vfn74b.jpg"),
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="settingsback_helper")]]
+        ),
+    )
