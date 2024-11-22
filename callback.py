@@ -34,7 +34,7 @@ def handle_callback(bot, call, user_data):
    elif call.data == "payment_done":
     # Create an inline keyboard with a "Join" button
     keyboard = types.InlineKeyboardMarkup()
-    join_button = types.InlineKeyboardButton(text="Cʜᴇᴄᴋ sᴛᴀᴛᴜs", url="https://your_link_here.com")  # Replace with your actual link
+    join_button = types.InlineKeyboardButton(text="Cʜᴇᴄᴋ sᴛᴀᴛᴜs", url="https://t.me/II_MEMBER_BOOST_II")  # Replace with your actual link
     keyboard.add(join_button)
     
     bot.send_message(
@@ -43,7 +43,7 @@ def handle_callback(bot, call, user_data):
         reply_markup=keyboard  # Attach the keyboard with the join button
     )
 
-        channel_id = "@FREE_PROMO_OFF"  # Replace with your admin channel username
+        channel_id = "@II_MEMBER_BOOST_II"  # Replace with your admin channel username
         order_details = user_data.get(call.message.chat.id, {})
         public_link = order_details.get("public_link", "N/A")
         price = order_details.get("price", "N/A")
@@ -51,12 +51,12 @@ def handle_callback(bot, call, user_data):
 
         msg = bot.send_message(
             channel_id,
-            f"📦 **New Order**\n\n"
-            f"👤 **User ID**: {call.from_user.id}\n"
-            f"📎 **Public Link**: {public_link}\n"
-            f"👥 **Members**: {members}\n"
-            f"💰 **Amount**: {price}\n"
-            f"📌 **Status**: Pending",
+            f"📦 **Nᴇᴡ ᴏʀᴅᴇʀ**\n\n"
+            f"👤 **Usᴇʀ ɪᴅ**: {call.from_user.id}\n"
+            f"📎 **Pᴜʙʟɪᴄ ʟɪɴᴋ**: [Hᴇʀᴇ]({public_link})\n"
+            f"👥 **Mᴇᴍʙᴇʀs**: {members}\n"
+            f"💰 **Aᴍᴏᴜɴᴛ**: {price}\n"
+            f"📌 **Sᴛᴀᴛᴜs**: Pending",
         )
 
         user_data[call.message.chat.id]["channel_message_id"] = msg.message_id
