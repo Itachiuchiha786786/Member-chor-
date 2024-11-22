@@ -9,11 +9,17 @@ class Button:
 
     @staticmethod
     def price_list_buttons():
-        markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("1", callback_data="1"))
-        markup.add(types.InlineKeyboardButton("2", callback_data="2"))
-        markup.add(types.InlineKeyboardButton("3", callback_data="3"))
-        return markup
+    markup = types.InlineKeyboardMarkup()
+    # Add all buttons in one row
+    markup.row(
+        types.InlineKeyboardButton("𝙰", callback_data="price_200"),
+        types.InlineKeyboardButton("𝙱", callback_data="price_500"),
+        types.InlineKeyboardButton("𝙲", callback_data="price_1000"),
+        types.InlineKeyboardButton("𝙳", callback_data="price_2000"),
+        types.InlineKeyboardButton("𝙴", callback_data="price_5000")
+    )
+    return markup
+
 
     @staticmethod
     def pay_now_button():
