@@ -28,15 +28,20 @@ def handle_callback(bot, call, user_data):
 
         bot.send_message(
             call.message.chat.id,
-            f"आपने {members} के लिए {price} चुना है। कृपया नीचे दिए गए 'Pay Now' बटन पर क्लिक करें।",
+            f"Yᴏᴜʀ ᴏʀᴅᴇʀ {price} ғᴏʀ {members} ! Pʟᴇᴀsᴇ ɢᴏ ᴛᴏ 'Pᴀʏ ɴᴏᴡ' ʙᴜᴛᴛᴏɴ ।",
             reply_markup=Button.pay_now_button(),
         )
-
-    elif call.data == "payment_done":
-        bot.send_message(
-            call.message.chat.id,
-            "धन्यवाद! हमने आपका भुगतान प्राप्त कर लिया है। कृपया 10 मिनट प्रतीक्षा करें।",
-        )
+   elif call.data == "payment_done":
+    # Create an inline keyboard with a "Join" button
+    keyboard = types.InlineKeyboardMarkup()
+    join_button = types.InlineKeyboardButton(text="Cʜᴇᴄᴋ sᴛᴀᴛᴜs", url="https://your_link_here.com")  # Replace with your actual link
+    keyboard.add(join_button)
+    
+    bot.send_message(
+        call.message.chat.id,
+        "Tʜᴀɴᴋ ʏᴏᴜ! Wᴇ hᴀᴠᴇ Rᴇᴄᴇɪᴠᴇᴅ ʏᴏᴜ ᴏʀᴅᴇʀ. Pʟᴇᴀsᴇ ᴡᴀɪᴛ 10 Mɪɴᴜᴛᴇs. Yᴏᴜʀ ᴏʀᴅᴇʀ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴀғᴛᴇʀ ᴄᴏɴғɪʀᴍɪɴɢ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ. ᴛᴏ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴛᴀᴛᴜs, ᴊᴏɪɴ ᴏɴ ᴛʜᴇ sᴛᴀᴛᴜs ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ.",
+        reply_markup=keyboard  # Attach the keyboard with the join button
+    )
 
         channel_id = "@FREE_PROMO_OFF"  # Replace with your admin channel username
         order_details = user_data.get(call.message.chat.id, {})
