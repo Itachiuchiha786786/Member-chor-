@@ -86,12 +86,12 @@ def mark_order_done(message):
         bot.edit_message_text(
             chat_id=channel_id,
             message_id=message_id,
-            text=f"📦 **Nᴇᴡ ᴏʀᴅᴇʀ**\n\n"
-                 f"👤 **Usᴇʀ ɪᴅ**: {user_id}\n"
-                 f"📎 **Oʀᴅᴇʀ ʟɪɴᴋ**: {user_data[user_id].get('public_link', 'N/A')}\n"
-                 f"👥 **Mᴇᴍʙᴇʀ**: {user_data[user_id].get('members', 'N/A')}\n"
-                 f"💰 **Aᴍᴏᴜɴᴛ**: {user_data[user_id].get('price', 'N/A')}\n"
-                 f"📌 **Sᴛᴀᴛᴜs**: Cᴏᴍᴘʟᴇᴛᴇ 🥰"
+            text=f"📦 Nᴇᴡ ᴏʀᴅᴇʀ\n\n"
+                 f"👤 Usᴇʀ ɪᴅ: {user_id}\n"
+                 f"📎 Oʀᴅᴇʀ ʟɪɴᴋ: {user_data[user_id].get('public_link', 'N/A')}\n"
+                 f"👥 Mᴇᴍʙᴇʀ: {user_data[user_id].get('members', 'N/A')}\n"
+                 f"💰 Aᴍᴏᴜɴᴛ: {user_data[user_id].get('price', 'N/A')}\n"
+                 f"📌 Sᴛᴀᴛᴜs: Cᴏᴍᴘʟᴇᴛᴇ 🥰"
         )
         bot.reply_to(message, "Oʀᴅᴇʀ ᴄᴏᴍᴘʟᴇᴛᴇ 💕")
     except Exception as e:
