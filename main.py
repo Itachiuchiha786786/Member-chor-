@@ -3,7 +3,7 @@ from button import Button
 from callback import handle_callback
 
 API_TOKEN = "7638229482:AAHBrrkTzgtOhKA2578MmfbBvHBbKwMbloM"  # Replace with your actual bot token
-OWNER_ID = "7400383704"  # Replace with your Telegram user ID (as the bot owner)
+OWNER_ID = 7400383704  # Replace with your Telegram user ID (as the bot owner)
 bot = TeleBot(API_TOKEN)
 
 # User data tracking for temporary states
@@ -43,12 +43,12 @@ def handle_public_link(message):
 @bot.message_handler(commands=["done"])
 def mark_order_done(message):
     if message.from_user.id != OWNER_ID:
-        bot.reply_to(message, "आपके पास इस आदेश को पूरा करने की अनुमति नहीं है।")
+        # If the command is not from the owner, do nothing
         return
 
     try:
         _, user_id = message.text.split()
-        user_id = int(user_id)
+        user_id = int(user_id)  # Convert user_id to integer
     except ValueError:
         bot.reply_to(message, "कृपया सही फॉर्मेट में कमांड दर्ज करें: /done <user_id>")
         return
