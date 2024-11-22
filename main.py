@@ -18,13 +18,7 @@ def start(message):
 # Handle Callback Queries
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
-    global user_data
-
-    if call.data == "order_now":
-        bot.send_message(call.message.chat.id, "कृपया अपना पब्लिक लिंक भेजें।")
-        user_data[call.message.chat.id] = {"step": "awaiting_link"}  # Track user state
-
-    handle_callback(bot, call)
+    handle_callback(bot, call, user_data)
 
 # Handle Public Link from User
 @bot.message_handler(func=lambda message: user_data.get(message.chat.id, {}).get("step") == "awaiting_link")
