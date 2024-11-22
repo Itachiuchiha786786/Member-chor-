@@ -20,8 +20,8 @@ class Button:
         markup = types.InlineKeyboardMarkup()
         markup.add(
             types.InlineKeyboardButton(
-                "Pay Now",
-                url="https://www.phonepe.com/"  # Redirect to generic payment guidance
+                "Pay Now", 
+                url="https://www.phonepe.com/"  # Redirect to a general payment link
             )
         )
         markup.add(
