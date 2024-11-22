@@ -2,7 +2,7 @@ from telebot import TeleBot, types
 from button import Button
 from callback import handle_callback
 
-API_TOKEN = "YOUR_BOT_TOKEN"  # Apna Telegram Bot Token yahan daalein
+API_TOKEN = "7638229482:AAHBrrkTzgtOhKA2578MmfbBvHBbKwMbloM"  # Apna Telegram Bot Token yahan daalein
 bot = TeleBot(API_TOKEN)
 
 # Start Command
