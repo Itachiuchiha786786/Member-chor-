@@ -40,7 +40,7 @@ class Button:
         markup = types.InlineKeyboardMarkup()
         markup.add(
             types.InlineKeyboardButton(
-                "Pᴀʏ ɴᴏᴡ", callback_data="pay_now_image"  # Callback to trigger image display
+                "Pᴀʏ ɴᴏᴡ", callback_data="pay_now_image"  # Change callback_data to handle the image
             )
         )
         markup.add(
@@ -50,18 +50,8 @@ class Button:
         )
         return markup
 
-# Handler to edit the message and show the image when the button is clicked
+# This method needs to handle the callback
 def handle_callback(call):
     if call.data == "pay_now_image":
-        # Edit the message text and show the image as a preview
-        bot.edit_message_text(
-            chat_id=call.message.chat.id,
-            message_id=call.message.message_id,
-            text="Here's the payment image preview:"
-        )
-        # Optionally, add the image URL as a caption
-        bot.edit_message_media(
-            chat_id=call.message.chat.id,
-            message_id=call.message.message_id,
-            media=types.InputMediaPhoto("https://files.catbox.moe/vfn74b.jpg")
-        )
+        # Send the image directly to the user
+        bot.send_photo(call.message.chat.id, "https://files.catbox.moe/vfn74b.jpg")  # The image URL here
