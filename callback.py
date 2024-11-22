@@ -1,8 +1,6 @@
 from button import Button
 
-def handle_callback(bot, call):
-    global user_data
-
+def handle_callback(bot, call, user_data):
     if call.data.startswith("price_"):
         if call.data == "price_10":
             price = "₹50"
@@ -17,6 +15,9 @@ def handle_callback(bot, call):
             price = "Unknown"
             members = "Unknown"
 
+        # Save price and members in user_data
+        if call.message.chat.id not in user_data:
+            user_data[call.message.chat.id] = {}
         user_data[call.message.chat.id]["price"] = price
         user_data[call.message.chat.id]["members"] = members
 
