@@ -50,10 +50,10 @@ def handle_public_link(message):
 「➎」:- ₹1500 ⇝5000 Mᴇᴍʙᴇʀ
 ┗━━━━━━━༻❁༺━━━━━━━┛
 「Nᴏᴛᴇ」¹:- Oᴛʜᴇʀ sᴇʀᴠɪᴄᴇ ᴀᴠᴀɪʟᴀʙʟᴇ
-ᴄᴏɴᴛᴀᴄᴛ : ‌‌➛ [Oᴡɴᴇʀ](https://t.me/UTTAM470) / [Cᴏ ᴏᴡɴᴇʀ](https://t.me/llMR_VAMPIRE_KINGll)
+ᴄᴏɴᴛᴀᴄᴛ : ‌‌➛ Oᴡɴᴇʀ / Cᴏ ᴏᴡɴᴇʀ
 
-「Nᴏᴛᴇ」²:- Aɴʏ ᴘᴀʏᴍᴇɴᴛ ɪssᴜᴇ ᴄᴏɴᴛᴀᴄᴛ [Oᴡɴᴇʀ](https://t.me/UTTAM470) / [Cᴏ ᴏᴡɴᴇʀ](https://t.me/llMR_VAMPIRE_KINGll)
-ᴀɴᴅ Cᴏᴍᴇ ᴛᴏ [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/+OL6jdTL7JAJjYzVl)""",
+「Nᴏᴛᴇ」²:- Aɴʏ ᴘᴀʏᴍᴇɴᴛ ɪssᴜᴇ ᴄᴏɴᴛᴀᴄᴛ Oᴡɴᴇʀ / Cᴏ ᴏᴡɴᴇʀ
+ᴀɴᴅ Cᴏᴍᴇ ᴛᴏ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ""",
             reply_markup=Button.price_list_buttons(),
         )
     else:
