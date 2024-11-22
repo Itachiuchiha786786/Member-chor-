@@ -14,7 +14,7 @@ user_data = {}
 def start(message):
     welcome_text = (
     "╭────────〔༻༺〕────────╮\n‎ ‎  ‌‎   ‌‎Wᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍᴇᴍʙᴇʀ Bᴏᴏsᴛɪɴɢ !\n   ━━━━━━━━━༻❁༺━━━━━━━━━\n"
-    "‌‌‌‌    Aɴʏ ᴘʀᴏʙʟᴇᴍ ᴠɪsɪᴛ ʜᴇʀᴇ :- Sᴜᴘᴘᴏʀᴛ\n‌‌             Pᴀɪᴅ ʙᴏᴏsᴛɪɴɢ ᴀᴠᴀɪʟᴀʙʟᴇ \n‌‌‌‎                      𝙾 𝚁 𝙳 𝙴 𝚁  𝙽 𝙾 𝚆!!\n╰────────〔༻༺〕────────╯"
+    "‌‌‌‌    Aɴʏ ᴘʀᴏʙʟᴇᴍ ᴠɪsɪᴛ ʜᴇʀᴇ :- [Sᴜᴘᴘᴏʀᴛ](https://t.me/+OL6jdTL7JAJjYzVl)\n‌‌             Pᴀɪᴅ ʙᴏᴏsᴛɪɴɢ ᴀᴠᴀɪʟᴀʙʟᴇ \n‌‌‌‎                      𝙾 𝚁 𝙳 𝙴 𝚁  𝙽 𝙾 𝚆!!\n╰────────〔༻༺〕────────╯"
 )
     buttons = Button.order_now_button()
     bot.send_message(chat_id=message.chat.id, text=welcome_text, reply_markup=buttons)
@@ -50,10 +50,10 @@ def handle_public_link(message):
 「➎」:- ₹1500 ⇝5000 Mᴇᴍʙᴇʀ
 ┗━━━━━━━༻❁༺━━━━━━━┛
 「Nᴏᴛᴇ」¹:- Oᴛʜᴇʀ sᴇʀᴠɪᴄᴇ ᴀᴠᴀɪʟᴀʙʟᴇ
-ᴄᴏɴᴛᴀᴄᴛ : ‌‌➛ Oᴡɴᴇʀ / Cᴏ ᴏᴡɴᴇʀ
+ᴄᴏɴᴛᴀᴄᴛ : ‌‌➛ [Oᴡɴᴇʀ](https://t.me/UTTAM470) / [Cᴏ ᴏᴡɴᴇʀ](https://t.me/llMR_VAMPIRE_KINGll)
 
-「Nᴏᴛᴇ」²:- Aɴʏ ᴘᴀʏᴍᴇɴᴛ ɪssᴜᴇ ᴄᴏɴᴛᴀᴄᴛ Oᴡɴᴇʀ / Cᴏ ᴏᴡɴᴇʀ 
-ᴀɴᴅ Cᴏᴍᴇ ᴛᴏ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ""",
+「Nᴏᴛᴇ」²:- Aɴʏ ᴘᴀʏᴍᴇɴᴛ ɪssᴜᴇ ᴄᴏɴᴛᴀᴄᴛ [Oᴡɴᴇʀ](https://t.me/UTTAM470) / [Cᴏ ᴏᴡɴᴇʀ](https://t.me/llMR_VAMPIRE_KINGll)
+ᴀɴᴅ Cᴏᴍᴇ ᴛᴏ [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/+OL6jdTL7JAJjYzVl)""",
             reply_markup=Button.price_list_buttons(),
         )
     else:
@@ -69,12 +69,12 @@ def mark_order_done(message):
         _, user_id = message.text.split()
         user_id = int(user_id)  # Convert user_id to integer
     except ValueError:
-        bot.reply_to(message, "कृपया सही फॉर्मेट में कमांड दर्ज करें: /done <user_id>")
+        bot.reply_to(message, "Wʀᴏɴɢ ᴜsᴇs 🤪: /done <user_id>")
         return
 
     # Ensure the user_id exists in user_data and has a saved message_id
     if user_id not in user_data or "channel_message_id" not in user_data[user_id]:
-        bot.reply_to(message, "कोई लंबित आदेश नहीं मिला।")
+        bot.reply_to(message, "Nᴏ sᴍs ғᴏᴜɴᴅ।")
         return
 
     # Get the channel message_id and edit it
@@ -86,14 +86,14 @@ def mark_order_done(message):
         bot.edit_message_text(
             chat_id=channel_id,
             message_id=message_id,
-            text=f"📦 **New Order**\n\n"
-                 f"👤 **User ID**: {user_id}\n"
-                 f"📎 **Public Link**: {user_data[user_id].get('public_link', 'N/A')}\n"
-                 f"👥 **Members**: {user_data[user_id].get('members', 'N/A')}\n"
-                 f"💰 **Amount**: {user_data[user_id].get('price', 'N/A')}\n"
-                 f"📌 **Status**: Complete"
+            text=f"📦 **Nᴇᴡ ᴏʀᴅᴇʀ**\n\n"
+                 f"👤 **Usᴇʀ ɪᴅ**: {user_id}\n"
+                 f"📎 **Oʀᴅᴇʀ ʟɪɴᴋ**: {user_data[user_id].get('public_link', 'N/A')}\n"
+                 f"👥 **Mᴇᴍʙᴇʀ**: {user_data[user_id].get('members', 'N/A')}\n"
+                 f"💰 **Aᴍᴏᴜɴᴛ**: {user_data[user_id].get('price', 'N/A')}\n"
+                 f"📌 **Sᴛᴀᴛᴜs**: Cᴏᴍᴘʟᴇᴛᴇ 🥰"
         )
-        bot.reply_to(message, "आदेश को 'Complete' चिह्नित कर दिया गया है।")
+        bot.reply_to(message, "Oʀᴅᴇʀ ᴄᴏᴍᴘʟᴇᴛᴇ 💕")
     except Exception as e:
         bot.reply_to(message, f"त्रुटि: {e}")
 
