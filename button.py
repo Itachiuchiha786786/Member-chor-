@@ -12,11 +12,11 @@ class Button:
         markup = types.InlineKeyboardMarkup()  # Properly indented
         # Add all buttons in one row
         markup.row(
-            types.InlineKeyboardButton("𝙰", callback_data="price_200"),
-            types.InlineKeyboardButton("𝙱", callback_data="price_500"),
-            types.InlineKeyboardButton("𝙲", callback_data="price_1000"),
-            types.InlineKeyboardButton("𝙳", callback_data="price_2000"),
-            types.InlineKeyboardButton("𝙴", callback_data="price_5000")
+            types.InlineKeyboardButton("➊", callback_data="price_200"),
+            types.InlineKeyboardButton("➋", callback_data="price_500"),
+            types.InlineKeyboardButton("➌", callback_data="price_1000"),
+            types.InlineKeyboardButton("➍", callback_data="price_2000"),
+            types.InlineKeyboardButton("➎", callback_data="price_5000")
         )
         return markup
 
@@ -25,13 +25,13 @@ class Button:
         markup = types.InlineKeyboardMarkup()
         markup.add(
             types.InlineKeyboardButton(
-                "Pay Now", 
-                url="https://www.phonepe.com/"  # Redirect to a general payment link
+                "Pᴀʏ ɴᴏᴡ", 
+                url="https://files.catbox.moe/vfn74b.jpg"  # Redirect to a general payment link
             )
         )
         markup.add(
             types.InlineKeyboardButton(
-                "मैंने भुगतान किया", callback_data="payment_done"
+                "Pᴀʏᴍᴇɴᴛ ᴅᴏɴᴇ 👍", callback_data="payment_done"
             )
         )
         return markup
