@@ -2,7 +2,7 @@ from telebot import TeleBot
 from button import Button
 from callback import handle_callback
 
-API_TOKEN = "7638229482:AAHBrrkTzgtOhKA2578MmfbBvHBbKwMbloM"  # Apna Telegram Bot Token yahan daalein
+API_TOKEN = "7638229482:AAHBrrkTzgtOhKA2578MmfbBvHBbKwMbloM"  # Replace with your actual Telegram bot token
 bot = TeleBot(API_TOKEN)
 
 # User data tracking for temporary states
@@ -18,12 +18,17 @@ def start(message):
 # Handle Callback Queries
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
+    if call.data == "order_now":
+        # Ask for public link when 'Order Now' is clicked
+        bot.send_message(call.message.chat.id, "कृपया अपना पब्लिक लिंक भेजें।")
+        user_data[call.message.chat.id] = {"step": "awaiting_link"}  # Track state
+    
+    # Call the handler for price selection or other actions
     handle_callback(bot, call, user_data)
 
 # Handle Public Link from User
 @bot.message_handler(func=lambda message: user_data.get(message.chat.id, {}).get("step") == "awaiting_link")
 def handle_public_link(message):
-    global user_data
     public_link = message.text
 
     # Validate if public link is a URL
