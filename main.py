@@ -40,7 +40,6 @@ def handle_public_link(message):
     else:
         bot.send_message(message.chat.id, "कृपया एक सही पब्लिक लिंक भेजें।")
 
-# Command to Mark Orders as Complete
 @bot.message_handler(commands=["done"])
 def mark_order_done(message):
     if message.from_user.id != OWNER_ID:
@@ -54,14 +53,17 @@ def mark_order_done(message):
         bot.reply_to(message, "कृपया सही फॉर्मेट में कमांड दर्ज करें: /done <user_id>")
         return
 
+    # Ensure the user_id exists in user_data and has a saved message_id
     if user_id not in user_data or "channel_message_id" not in user_data[user_id]:
         bot.reply_to(message, "कोई लंबित आदेश नहीं मिला।")
         return
 
+    # Get the channel message_id and edit it
     channel_id = "@FREE_PROMO_OFF"  # Replace with your admin channel username
     message_id = user_data[user_id]["channel_message_id"]
 
     try:
+        # Edit the status in the message
         bot.edit_message_text(
             chat_id=channel_id,
             message_id=message_id,
@@ -75,6 +77,7 @@ def mark_order_done(message):
         bot.reply_to(message, "आदेश को 'Complete' चिह्नित कर दिया गया है।")
     except Exception as e:
         bot.reply_to(message, f"त्रुटि: {e}")
+
 
 # Bot Execution
 if __name__ == "__main__":
