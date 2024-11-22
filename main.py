@@ -4,18 +4,36 @@ from callback import handle_callback
 
 API_TOKEN = "7638229482:AAHBrrkTzgtOhKA2578MmfbBvHBbKwMbloM"  # Replace with your actual bot token
 OWNER_ID = 7400383704  # Replace with your Telegram user ID (as the bot owner)
+MUSIC_CHANNEL_USERNAME = "@BABY09_WORLD"  # Replace with your music channel username
 bot = TeleBot(API_TOKEN)
 
 # User data tracking for temporary states
 user_data = {}
 
-# Start Command
+# Check if user is a member of the music channel
+def is_user_member_of_music_channel(user_id):
+    try:
+        member = bot.get_chat_member(MUSIC_CHANNEL_USERNAME, user_id)
+        return member.status in ["member", "administrator", "creator"]
+    except Exception as e:
+        print(f"Error checking membership: {e}")
+        return False
+
+# Start Command with Music Join Check
 @bot.message_handler(commands=["start"])
 def start(message):
+    # Check if the user is a member of the music channel
+    if not is_user_member_of_music_channel(message.chat.id):
+        bot.send_message(
+            message.chat.id, 
+            f"Please join the music channel first to continue: {MUSIC_CHANNEL_USERNAME}."
+        )
+        return
+
     welcome_text = (
     "╭────────〔༻༺〕────────╮\n‎ ‎  ‌‎   ‌‎Wᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍᴇᴍʙᴇʀ Bᴏᴏsᴛɪɴɢ !\n   ━━━━━━━━━༻❁༺━━━━━━━━━\n"
     "‌‌‌‌    Aɴʏ ᴘʀᴏʙʟᴇᴍ ᴠɪsɪᴛ ʜᴇʀᴇ :- Sᴜᴘᴘᴏʀᴛ\n‌‌             Pᴀɪᴅ ʙᴏᴏsᴛɪɴɢ ᴀᴠᴀɪʟᴀʙʟᴇ \n‌‌‌‎                      𝙾 𝚁 𝙳 𝙴 𝚁  𝙽 𝙾 𝚆!!\n╰────────〔༻༺〕────────╯"
-)
+    )
     buttons = Button.order_now_button()
     bot.send_message(chat_id=message.chat.id, text=welcome_text, reply_markup=buttons)
 
