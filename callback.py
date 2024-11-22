@@ -1,4 +1,5 @@
 from button import Button
+from telebot import types
 
 def handle_callback(bot, call, user_data):
     if call.data.startswith("price_"):
@@ -31,17 +32,18 @@ def handle_callback(bot, call, user_data):
             f"Yᴏᴜʀ ᴏʀᴅᴇʀ {price} ғᴏʀ {members} ! Pʟᴇᴀsᴇ ɢᴏ ᴛᴏ 'Pᴀʏ ɴᴏᴡ' ʙᴜᴛᴛᴏɴ ।",
             reply_markup=Button.pay_now_button(),
         )
-   elif call.data == "payment_done":
-    # Create an inline keyboard with a "Join" button
-    keyboard = types.InlineKeyboardMarkup()
-    join_button = types.InlineKeyboardButton(text="Cʜᴇᴄᴋ sᴛᴀᴛᴜs", url="https://t.me/II_MEMBER_BOOST_II")  # Replace with your actual link
-    keyboard.add(join_button)
     
-    bot.send_message(
-        call.message.chat.id,
-        "Tʜᴀɴᴋ ʏᴏᴜ! Wᴇ hᴀᴠᴇ Rᴇᴄᴇɪᴠᴇᴅ ʏᴏᴜ ᴏʀᴅᴇʀ. Pʟᴇᴀsᴇ ᴡᴀɪᴛ 10 Mɪɴᴜᴛᴇs. Yᴏᴜʀ ᴏʀᴅᴇʀ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴀғᴛᴇʀ ᴄᴏɴғɪʀᴍɪɴɢ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ. ᴛᴏ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴛᴀᴛᴜs, ᴊᴏɪɴ ᴏɴ ᴛʜᴇ sᴛᴀᴛᴜs ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ.",
-        reply_markup=keyboard  # Attach the keyboard with the join button
-    )
+    elif call.data == "payment_done":
+        # Create an inline keyboard with a "Join" button
+        keyboard = types.InlineKeyboardMarkup()
+        join_button = types.InlineKeyboardButton(text="Cʜᴇᴄᴋ sᴛᴀᴛᴜs", url="https://t.me/II_MEMBER_BOOST_II")  # Replace with your actual link
+        keyboard.add(join_button)
+
+        bot.send_message(
+            call.message.chat.id,
+            "Tʜᴀɴᴋ ʏᴏᴜ! Wᴇ hᴀᴠᴇ Rᴇᴄᴇɪᴠᴇᴅ ʏᴏᴜ ᴏʀᴅᴇʀ. Pʟᴇᴀsᴇ ᴡᴀɪᴛ 10 Mɪɴᴜᴛᴇs. Yᴏᴜʀ ᴏʀᴅᴇʀ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴀғᴛᴇʀ ᴄᴏɴғɪʀᴍɪɴɢ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ. ᴛᴏ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴛᴀᴛᴜs, ᴊᴏɪɴ ᴏɴ ᴛʜᴇ sᴛᴀᴛᴜs ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ.",
+            reply_markup=keyboard  # Attach the keyboard with the join button
+        )
 
         channel_id = "@II_MEMBER_BOOST_II"  # Replace with your admin channel username
         order_details = user_data.get(call.message.chat.id, {})
