@@ -55,7 +55,7 @@ def handle_callback(bot, call, user_data):
             channel_id,
             f"📦 𝗡𝗘𝗪 𝗢𝗥𝗗𝗘𝗥\n\n"
             f"👤 Usᴇʀ ɪᴅ: {call.from_user.id}\n"
-            f"📎 Pᴜʙʟɪᴄ ʟɪɴᴋ: [Hᴇʀᴇ]({public_link})\n"
+            f"📎 Pᴜʙʟɪᴄ ʟɪɴᴋ: ({public_link})\n"
             f"👥 Mᴇᴍʙᴇʀs: {members}\n"
             f"💰 Aᴍᴏᴜɴᴛ: {price}\n"
             f"📌 Sᴛᴀᴛᴜs: Pᴇɴᴅɪɴɢ 😦",
