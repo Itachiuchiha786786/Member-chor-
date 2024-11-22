@@ -35,7 +35,7 @@ def handle_public_link(message):
         user_data[message.chat.id]["public_link"] = public_link
         user_data[message.chat.id]["step"] = "price_selection"
 
-        bot.send_message(
+        bot.edit_message(
             message.chat.id,
             "धन्यवाद! नीचे दिए गए बटन से अपना सदस्यता पैकेज चुनें।",
             reply_markup=Button.price_list_buttons(),
