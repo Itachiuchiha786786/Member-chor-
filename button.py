@@ -24,13 +24,13 @@ class Button:
 
         # Second row: Owner button
         markup.add(
-            types.InlineKeyboardButton("👑 Owner", url="https://t.me/your_owner_username")
+            types.InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+OL6jdTL7JAJjYzVl")
         )
 
         # Third row: Support and Update buttons
         markup.row(
-            types.InlineKeyboardButton("🛠 Support", url="https://t.me/your_support_channel"),
-            types.InlineKeyboardButton("🔔 Update", url="https://t.me/your_update_channel")
+            types.InlineKeyboardButton("Oᴡɴᴇʀ", url="https://t.me/UTTAM470"),
+            types.InlineKeyboardButton("Co Oᴡɴᴇʀ", url="https://t.me/llMR_VAMPIRE_KINGll")
         )
 
         return markup
