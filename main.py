@@ -13,9 +13,14 @@ user_data = {}
 @bot.message_handler(commands=["start"])
 def start(message):
     welcome_text = (
-    "╭────────〔༻༺〕────────╮\n‎ ‎  ‌‎   ‌‎Wᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍᴇᴍʙᴇʀ Bᴏᴏsᴛɪɴɢ !\n   ━━━━━━━━━༻❁༺━━━━━━━━━\n"
-    "‌‌‌‌    Aɴʏ ᴘʀᴏʙʟᴇᴍ ᴠɪsɪᴛ ʜᴇʀᴇ :- [Sᴜᴘᴘᴏʀᴛ](https://t.me/+OL6jdTL7JAJjYzVl)\n‌‌             Pᴀɪᴅ ʙᴏᴏsᴛɪɴɢ ᴀᴠᴀɪʟᴀʙʟᴇ \n‌‌‌‎                      𝙾 𝚁 𝙳 𝙴 𝚁  𝙽 𝙾 𝚆!!\n╰────────〔༻༺〕────────╯"
-)
+        "╭────────〔༻༺〕────────╮\n"
+        "‎ ‎  Wᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍᴇᴍʙᴇʀ Bᴏᴏsᴛɪɴɢ !\n"
+        "━━━━━━━━━༻❁༺━━━━━━━━━\n"
+        "Aɴʏ ᴘʀᴏʙʟᴇᴍ ᴠɪsɪᴛ ʜᴇʀᴇ :- [Sᴜᴘᴘᴏʀᴛ](https://t.me/+OL6jdTL7JAJjYzVl)\n"
+        "Pᴀɪᴅ ʙᴏᴏsᴛɪɴɢ ᴀᴠᴀɪʟᴀʙʟᴇ \n"
+        "𝙾 𝚁 𝙳 𝙴 𝚁 𝙽 𝙾 𝚆!!\n"
+        "╰────────〔༻༺〕────────╯"
+    )
     buttons = Button.order_now_button()
     bot.send_message(chat_id=message.chat.id, text=welcome_text, reply_markup=buttons)
 
