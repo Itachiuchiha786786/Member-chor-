@@ -4,16 +4,16 @@ from callback import handle_callback
 
 API_TOKEN = "7638229482:AAHBrrkTzgtOhKA2578MmfbBvHBbKwMbloM"  # Replace with your actual bot token
 OWNER_ID = 7400383704  # Replace with your Telegram user ID (as the bot owner)
-MUSIC_CHANNEL_USERNAME = "@BABY09_WORLD"  # Replace with your music channel username
+BABY_CHANNEL_USERNAME = "@BABY09_WORLD"  # Replace with your music channel username
 bot = TeleBot(API_TOKEN)
 
 # User data tracking for temporary states
 user_data = {}
 
 # Check if user is a member of the music channel
-def is_user_member_of_music_channel(user_id):
+def is_user_member_of_baby_channel(user_id):
     try:
-        member = bot.get_chat_member(MUSIC_CHANNEL_USERNAME, user_id)
+        member = bot.get_chat_member(BABY_CHANNEL_USERNAME, user_id)
         return member.status in ["member", "administrator", "creator"]
     except Exception as e:
         print(f"Error checking membership: {e}")
@@ -23,10 +23,10 @@ def is_user_member_of_music_channel(user_id):
 @bot.message_handler(commands=["start"])
 def start(message):
     # Check if the user is a member of the music channel
-    if not is_user_member_of_music_channel(message.chat.id):
+    if not is_user_member_of_baby_channel(message.chat.id):
         bot.send_message(
             message.chat.id, 
-            f"Please join the music channel first to continue: {MUSIC_CHANNEL_USERNAME}."
+            f"Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴛʜᴇ channel ғɪʀsᴛ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ: {BABY_CHANNEL_USERNAME}."
         )
         return
 
