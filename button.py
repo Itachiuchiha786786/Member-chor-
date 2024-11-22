@@ -10,9 +10,9 @@ class Button:
     @staticmethod
     def price_list_buttons():
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("10 Members - ₹50", callback_data="price_10"))
-        markup.add(types.InlineKeyboardButton("50 Members - ₹200", callback_data="price_50"))
-        markup.add(types.InlineKeyboardButton("100 Members - ₹400", callback_data="price_100"))
+        markup.add(types.InlineKeyboardButton("1", callback_data="1"))
+        markup.add(types.InlineKeyboardButton("2", callback_data="2"))
+        markup.add(types.InlineKeyboardButton("3", callback_data="3"))
         return markup
 
     @staticmethod
