@@ -4,7 +4,8 @@ class Button:
     @staticmethod
     def order_now_button():
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("Order Now", callback_data="order_now"))
+        markup.add(types.InlineKeyboardButton("Oʀᴅᴇʀ ɴᴏᴡ", callback_data="order_now"))
+        markup.add(types.InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+OL6jdTL7JAJjYzVl"))
         return markup
 
     @staticmethod
