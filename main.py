@@ -23,7 +23,7 @@ def start(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
     if call.data == "order_now":
-        bot.send_message(call.message.chat.id, "कृपया अपना पब्लिक लिंक भेजें।")
+        bot.send_message(call.message.chat.id, "Nᴏᴡ sᴇɴᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ [ᴘᴜʙʟɪᴄ]")
         user_data[call.message.chat.id] = {"step": "awaiting_link"}
     handle_callback(bot, call, user_data)
 
@@ -41,7 +41,7 @@ def handle_public_link(message):
             reply_markup=Button.price_list_buttons(),
         )
     else:
-        bot.send_message(message.chat.id, "कृपया एक सही पब्लिक लिंक भेजें।")
+        bot.send_message(message.chat.id, "Yᴏᴜ ᴀʀᴇ ɴᴏᴛ sᴇɴᴅ ᴀ [ᴘᴜʙʟɪᴄ/ᴠᴀʟɪᴅ] ʟɪɴᴋ ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ !")
 
 @bot.message_handler(commands=["done"])
 def mark_order_done(message):
