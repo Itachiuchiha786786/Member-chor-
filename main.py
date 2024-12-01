@@ -3,8 +3,8 @@ from button import Button
 from callback import handle_callback
 
 API_TOKEN = "7850537170:AAH5ANR4RVQ3EPXET_aiF5AOAOAes7XR5jE"  # Replace with your actual bot token
-OWNER_ID = 7400383704  # Replace with your Telegram user ID (as the bot owner)
-BABY_CHANNEL_USERNAME = "@BABY09_WORLD"  # Replace with your music channel username
+OWNER_ID = 6402009857  # Replace with your Telegram user ID (as the bot owner)
+BABY_CHANNEL_USERNAME = "@the_dynamic_network"  # Replace with your music channel username
 bot = TeleBot(API_TOKEN)
 
 # User data tracking for temporary states
