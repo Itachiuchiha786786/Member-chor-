@@ -5,7 +5,7 @@ class Button:
     def order_now_button():
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("Oʀᴅᴇʀ ɴᴏᴡ", callback_data="order_now"))
-        markup.add(types.InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+OL6jdTL7JAJjYzVl"))
+        markup.add(types.InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/dynamic_gangs"))
         return markup
 
     @staticmethod
@@ -24,13 +24,13 @@ class Button:
 
         # Second row: Owner button
         markup.add(
-            types.InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+OL6jdTL7JAJjYzVl")
+            types.InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/dynamic_gangs")
         )
 
         # Third row: Support and Update buttons
         markup.row(
-            types.InlineKeyboardButton("Oᴡɴᴇʀ", url="https://t.me/UTTAM470"),
-            types.InlineKeyboardButton("Co Oᴡɴᴇʀ", url="https://t.me/llMR_VAMPIRE_KINGll")
+            types.InlineKeyboardButton("Oᴡɴᴇʀ", url="https://t.me/hehe"),
+            types.InlineKeyboardButton("Co Oᴡɴᴇʀ", url="https://t.me/none")
         )
 
         return markup
