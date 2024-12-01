@@ -36,7 +36,7 @@ def handle_callback(bot, call, user_data):
     elif call.data == "payment_done":
         # Create an inline keyboard with a "Join" button
         keyboard = types.InlineKeyboardMarkup()
-        join_button = types.InlineKeyboardButton(text="Cʜᴇᴄᴋ sᴛᴀᴛᴜs", url="https://t.me/+1lOotCtqajdjZWJl")  # Replace with your actual link
+        join_button = types.InlineKeyboardButton(text="Cʜᴇᴄᴋ sᴛᴀᴛᴜs", url="https://t.me/tesinggggggg")  # Replace with your actual link
         keyboard.add(join_button)
 
         bot.send_message(
